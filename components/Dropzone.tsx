@@ -13,10 +13,11 @@ import {
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
 import DropzoneComponent from "react-dropzone";
+import toast from "react-hot-toast";
 
 function Dropzone() {
   const [loading, setLoading] = useState(false);
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { user } = useUser();
 
   const onDrop = (acceptedFiles: File[]) => {
     acceptedFiles.forEach((file) => {
@@ -36,6 +37,7 @@ function Dropzone() {
     if (!user) return;
 
     setLoading(true);
+    const toastId = toast.loading("Envoie en cours....");
 
     const docRef = await addDoc(collection(db, "users", user.id, "files"), {
       userId: user.id,
@@ -56,6 +58,10 @@ function Dropzone() {
       });
     });
 
+    toast.success("Votre fichier a été envoyé", {
+      id: toastId,
+    });
+    
     setLoading(false);
   };
 
@@ -75,15 +81,15 @@ function Dropzone() {
           fileRejections.length > 0 && fileRejections[0].file.size > maxSize;
 
         return (
-          <section /* className="m-4" */>
+          <section>
             <div
               {...getRootProps()}
-               className={cn(
-                "w-full h-52 flex justify-center items-center p-5 border border-dashed rounded-lg text-center",
+              className={cn(
+                "w-full h-96 flex justify-center items-center p-5 border border-dashed rounded-lg text-center",
                 isDragActive
                   ? "bg-[#035FFE] text-white animate-pulse"
                   : "bg-slate-100/50 dark:bg-slate-800/80 text-slate-400"
-              )} 
+              )}
             >
               <input {...getInputProps()} />
               {!isDragActive && "Déposez ici les fichiers à importer"}

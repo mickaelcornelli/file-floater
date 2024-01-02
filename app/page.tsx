@@ -42,17 +42,16 @@ export default function Home() {
       <p className="text-center font-light p-2">
         Avec File Floater, vous profitez d’une suite complète d’outils conçus
         pour vous aider à créer, partager, gérer et suivre des contenus plus
-        efficacement. De plus, vous bénéficiez d’un espace de stockage cloud
-        fiable.
+        efficacement. De plus, vous bénéficiez d’un Stockage cloud fiable.
       </p>
 
-      <div className="pricing-plan p-4 md:p-8">
+      <div className="flex flex-col p-4 md:p-8 items-center justify-center">
         <h2 className="text-2xl font-bold text-center mb-6">
           Choisissez votre plan
         </h2>
         <div className="flex flex-col md:flex-row justify-center gap-4">
           {/* Plan Basique */}
-          <div className="plan bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-1 transition duration-300 transform hover:scale-105 hover:shadow-2xl">
+          <div className="max-w-96 bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-1 transition duration-300 transform hover:scale-105 hover:shadow-2xl">
             <h3 className="text-xl font-semibold">Basique</h3>
             <ul className="mb-6 text-gray-800">
               {/* Détails du plan */}
@@ -60,49 +59,60 @@ export default function Home() {
                 Une solution idéale pour les usages personnels
               </li>
               <li>✅ Performance Standard</li>
-              <li>✅ Espace de stockage en ligne limité à 1GO</li>
+              <li>✅ Stockage en ligne limité à 1GO</li>
               <li>✅ Envoi jusqu'à 2 GB</li>
-              <li className="font-bold mt-6">€10/mois</li>
+              <li className="font-bold mt-6 pb-6">€10/mois</li>
             </ul>
-            <button className="w-full bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600 transition-colors">
+            <Link
+              href="/dashboard"
+              className="bg-blue-500 text-white rounded-md p-2 hover:bg-blue-600 transition-colors absolute bottom-5"
+            >
               Essayer
-            </button>
+            </Link>
           </div>
 
           {/* Plan Business */}
-          <div className="plan bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-1 transition duration-300 transform hover:scale-105 hover:shadow-2xl">
+          <div className="max-w-96 bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-1 transition duration-300 transform hover:scale-105 hover:shadow-2xl">
             <h3 className="text-xl font-semibold">Business</h3>
             <ul className="mb-6 text-gray-800">
               {/* Détails du plan */}
               <li className="mb-6 text-gray-800 font-bold">
-                Augmentez votre niveau avec plus de puissance et des
+                Plus de puissance et des
                 fonctionnalités améliorées
               </li>
               <li>✅ Performance amélioré</li>
-              <li>✅ Pas de taille de limite de transfert</li>
-              <li>✅ Stockage illimité</li>
-              <li className="font-bold mt-6">€20/mois</li>
+              <li>✅ Stockage en ligne limité à 20GO</li>
+              <li>✅ Envoi jusqu'à 1 GB</li>
+
+              <li className="font-bold mt-6 pb-6">€20/mois</li>
             </ul>
-            <button className="w-full bg-green-500 text-white rounded-md p-2 hover:bg-green-600 transition-colors">
+            <Link
+              href="/dashboard"
+              className="bg-green-500 text-white rounded-md p-2 hover:bg-green-600 transition-colors absolute bottom-5"
+            >
               S'abonner
-            </button>
+            </Link>
           </div>
 
           {/* Plan Premium */}
-          <div className="plan bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-1 transition duration-300 transform hover:scale-105 hover:shadow-2xl">
+          <div className="max-w-96 bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-1 transition duration-300 transform hover:scale-105 hover:shadow-2xl">
             <h3 className="text-xl font-semibold">Premium</h3>
             <ul className="mb-6 text-gray-800">
               {/* Détails du plan */}
               <li className="mb-6 text-gray-800 font-bold">
-                Profitez de performances optimisées et de ressources illimités
+                Performances optimisées et ressources illimités
               </li>
               <li>✅ Performance Maximale (Jusqu'à 10x)</li>
-              <li>✅ Caractéristique 3</li>
-              <li className="font-bold mt-6">€30/mois</li>
+              <li>✅ Pas de taille de limite de transfert</li>
+              <li>✅ Stockage illimité</li>
+              <li className="font-bold mt-6 pb-6">€30/mois</li>
             </ul>
-            <button className="w-full bg-[#7145f5] text-white rounded-md p-2 hover:bg-[#2f1c6a] transition-colors">
+            <Link
+              href="/dashboard"
+              className="bg-[#7145f5] text-white rounded-md p-2 hover:bg-[#2f1c6a] transition-colors absolute bottom-5"
+            >
               S'abonner
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ async function Dashboard() {
       <Dropzone />
 
       <section className="container space-y-5">
-        <h2 className="font-bold">Vos fichiers</h2>
+        <h2 className="font-bold pt-5">Vos fichiers</h2>
         <div>
           <TableWrapper skeletonFiles={skeletonFiles} />
         </div>

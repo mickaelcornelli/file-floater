@@ -14,6 +14,7 @@ import { useAppStore } from "@/store/store";
 import { useUser } from "@clerk/nextjs";
 import { deleteDoc, doc } from "firebase/firestore";
 import { ref, deleteObject } from "firebase/storage";
+import toast from "react-hot-toast";
 
 export function DeleteModal() {
   const { user } = useUser();
@@ -29,6 +30,7 @@ export function DeleteModal() {
     if (!user || !fileId) return;
 
     const fileRef = ref(storage, `users/${user.id}/files/${fileId}`);
+    const toastId = toast.loading("Suppression....");
 
     try {
       deleteObject(fileRef).then(async () => {
@@ -36,6 +38,9 @@ export function DeleteModal() {
         deleteDoc(doc(db, "users", user.id, "files", fileId))
           .then(() => {
             console.log("Doc de firestore supprimé"!);
+            toast.success("Votre fichier a été supprimé", {
+              id: toastId,
+            });
           })
           .finally(() => {
             setIsDeleteModalOpen(false);
@@ -43,6 +48,12 @@ export function DeleteModal() {
       });
     } catch (error) {
       setIsDeleteModalOpen(false);
+      toast.error(
+        "Une erreur s'est produite lors de la suppression de votre fichier",
+        {
+          id: toastId,
+        }
+      );
       console.log(error);
     }
   }
