@@ -61,7 +61,7 @@ function Dropzone() {
     toast.success("Votre fichier a été envoyé", {
       id: toastId,
     });
-    
+
     setLoading(false);
   };
 

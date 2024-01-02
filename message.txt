@@ -1,1 +1,1 @@
-- ajout d'une section prix
+- ajout <Footer/> avec flowbite-react 

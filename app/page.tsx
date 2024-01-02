@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -36,16 +37,27 @@ export default function Home() {
         </div>
       </div>
 
-      <p className="text-center font-bold text-xl pt-5">
-        Service 100% gratuit. Disponible 24h/24 7j/7
-      </p>
-      <p className="text-center font-light p-2">
-        Avec File Floater, vous profitez d’une suite complète d’outils conçus
-        pour vous aider à créer, partager, gérer et suivre des contenus plus
-        efficacement. De plus, vous bénéficiez d’un Stockage cloud fiable.
-      </p>
+      <div>
+        <p className="text-center font-bold text-xl pt-5">
+          Service 100% gratuit. Disponible 24h/24 7j/7
+        </p>
+        <p className="text-center font-light p-2">
+          Avec File Floater, vous profitez d’une suite complète d’outils conçus
+          pour vous aider à créer, partager, gérer et suivre des contenus plus
+          efficacement. De plus, vous bénéficiez d’un Stockage cloud fiable.
+        </p>
+        <div className="flex justify-center items-center mt-5 mb-5">
+          <Image
+            src="/file_sharing.png"
+            alt="service gratuit"
+            className="object-contain rounded-xl"
+            width={300}
+            height={300}
+          />
+        </div>
+      </div>
 
-      <div className="flex flex-col p-4 md:p-8 items-center justify-center">
+      <div className="bg-[#2B2929] dark:bg-slate-800 flex flex-col p-4 md:p-8 items-center justify-center">
         <h2 className="text-2xl font-bold text-center mb-6">
           Choisissez votre plan
         </h2>
@@ -77,8 +89,7 @@ export default function Home() {
             <ul className="mb-6 text-gray-800">
               {/* Détails du plan */}
               <li className="mb-6 text-gray-800 font-bold">
-                Plus de puissance et des
-                fonctionnalités améliorées
+                Plus de puissance et des fonctionnalités améliorées
               </li>
               <li>✅ Performance amélioré</li>
               <li>✅ Stockage en ligne limité à 20GO</li>
