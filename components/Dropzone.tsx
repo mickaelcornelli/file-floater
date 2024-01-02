@@ -47,7 +47,7 @@ function Dropzone() {
       size: selectedFile.size,
     });
 
-    const imageRef = ref(storage, `users/${user.id}/files${docRef.id}`);
+    const imageRef = ref(storage, `users/${user.id}/files/${docRef.id}`);
 
     uploadBytes(imageRef, selectedFile).then(async (snapshot) => {
       const downloadURL = await getDownloadURL(imageRef);
@@ -55,7 +55,7 @@ function Dropzone() {
         downloadURL: downloadURL,
       });
     });
-    
+
     setLoading(false);
   };
 
@@ -75,15 +75,15 @@ function Dropzone() {
           fileRejections.length > 0 && fileRejections[0].file.size > maxSize;
 
         return (
-          <section className="m-4">
+          <section /* className="m-4" */>
             <div
               {...getRootProps()}
-              className={cn(
+               className={cn(
                 "w-full h-52 flex justify-center items-center p-5 border border-dashed rounded-lg text-center",
                 isDragActive
                   ? "bg-[#035FFE] text-white animate-pulse"
                   : "bg-slate-100/50 dark:bg-slate-800/80 text-slate-400"
-              )}
+              )} 
             >
               <input {...getInputProps()} />
               {!isDragActive && "Déposez ici les fichiers à importer"}
