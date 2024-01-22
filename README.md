@@ -1,3 +1,9 @@
+![image](https://github.com/mickaelcornelli/file-floater/assets/73282517/659b60ac-e373-4660-8694-361a3d45e88e)
+![image](https://github.com/mickaelcornelli/file-floater/assets/73282517/6785c913-385e-4079-9e5f-a1fcc121c15c)
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
